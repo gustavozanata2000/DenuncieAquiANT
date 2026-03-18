@@ -1,0 +1,345 @@
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Corpo */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('backgroundnegros.jpg') no-repeat center/cover;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 88;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: width 0.5s ease, transform 0.5s ease;
+    transform-origin: right;
+}
+
+.navigation a:hover::after {
+    width: 100%;
+    transform-origin: left;
+}
+
+.btnlogin-popup {
+    width: 150px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: background 0.5s, color 0.5s;
+}
+
+.btnlogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+/* Container principal */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 80px;
+    width: 90%;
+}
+
+/* Caixas de formulário */
+.form-box {
+    position: relative;
+    /* Necessário para posicionar o close dentro dele */
+    width: 45%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    transition: all 0.3s ease;
+}
+
+/* Esconde a caixa de registro por padrão */
+.form-box.register {
+    display: none;
+}
+
+/* Estilizando o ícone de fechar */
+.form-box .icon-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+    background: black;
+    font-size: 2em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 99;
+    transition: background 0.3s;
+}
+
+.form-box .icon-close:hover {
+    background: #333;
+}
+
+/* Título */
+.form-box h2 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: white;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: white;
+}
+
+.lembrar-senha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: white;
+    font-weight: 500;
+    margin: -15px 0 20px 0;
+}
+
+.lembrar-senha label input {
+    accent-color: white;
+    margin-right: 3px;
+}
+
+.lembrar-senha a {
+    color: white;
+    text-decoration: none;
+}
+
+.lembrar-senha a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+}
+
+.login-register {
+    font-size: 0.9em;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.btnlogin-popup {
+    padding: 10px 20px;
+    font-size: 16px;
+    display: inline-block;
+    text-decoration: none;
+    color: #00RRGGBB;
+    background-color: #00RRGGBB;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.about-container {
+    position: relative;
+    width: 90%;
+    /* ajustado para ser mais compacto, pode aumentar ou diminuir conforme desejar */
+    max-width: 700px;
+    /* diminua para deixar a caixa menor */
+    margin: 20px auto;
+    padding: 20px;
+    /* reduzi o padding para diminuir o tamanho interno */
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Título estilizado */
+.pagetitle {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Texto principal */
+.pagetext {
+    font-size: 1.2em;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.conteiner-contato {
+    position: relative; 
+    width: 90%;
+    /* ajustado para ser mais compacto, pode aumentar ou diminuir conforme desejar */
+    max-width: 700px;
+    /* diminua para deixar a caixa menor */
+    margin: 20px auto;
+    padding: 20px;
+    /* reduzi o padding para diminuir o tamanho interno */
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.contato-complaint {
+    font-size: 1.2em;
+    color: #fff;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.home-conteiner {
+    position: relative;
+    width: 90%;
+    /* ajustado para ser mais compacto, pode aumentar ou diminuir conforme desejar */
+    max-width: 700px;
+    /* diminua para deixar a caixa menor */
+    margin: 20px auto;
+    padding: 20px;
+    /* reduzi o padding para diminuir o tamanho interno */
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.title-page {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.home-page {
+    font-size: 1.2em;
+    color: #fff;
+    line-height: 1.6;
+}
